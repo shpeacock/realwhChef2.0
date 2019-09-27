@@ -48,16 +48,6 @@ var breakFastJob = new cronJob({
   timeZone: 'America/Chicago'
 });
 //this looks for followers every sunday, wednesday and friday at 715 PM CST
-var findFolks = new cronJob({
-  cronTime: '35 17 * * *',
-  onTick: function(){
-    searchIt();
-  },
-  start: false,
-  timeZone: 'America/Chicago'
-});
-
-findFolks.start();
 breakFastJob.start();
 
-searchIt();
+
