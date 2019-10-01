@@ -35,7 +35,28 @@ var stream = whChef.stream('statuses/filter', { track: '@realwhChef' });
           }
           whChef.post('statuses/update', statusObj);
         }
-  });
+});
+
+function searchIt() {
+whChef.get('search/tweets', {q: "\" Trump Dick\"",}  , gotData);
+  function gotData(err,data) {
+    let message = "  ay yo. Alls I heard was talk bout' trump and dicks. I thought you might wanna follow my page! I feed that man dicks everyday";
+    if(!data){
+      console.log(err);
+    }
+    if(data){
+      let tweets = data.statuses;
+      for(var i = 0; i < tweets.length; i++){
+        var statusObj = {
+                          status: "@" + tweets[i].user.screen_name + message,
+                          in_reply_to_status_id: tweets[i].id_str
+                        }
+  
+        whChef.post('statuses/update', statusObj);
+      }
+    }
+  }
+}
 
 
 //this makes sure that the breakfast function runs everymorning at 8:00am EST
