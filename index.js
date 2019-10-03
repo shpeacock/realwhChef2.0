@@ -11,7 +11,7 @@ const whChef = new twit(chefConfig);
 const myid_str = [925160703006330880, 22831053, 1096867112029691911,];
 
 //this function creates a random breakfast purportedly served to the president of the united states and tweets it
-function breakFast(){
+function breakFast(){ 
   var test = animals();
   var breakfast = bf[Math.floor(Math.random()*bf.length)];
   const params = {
@@ -19,6 +19,7 @@ function breakFast(){
   }
   whChef.post('statuses/update', params);
 }
+
 
 var stream = whChef.stream('statuses/filter', { track: '@realwhChef' });
   stream.on('tweet', function(tweet){
