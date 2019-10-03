@@ -8,6 +8,8 @@ const bf = m.breakfast;
 //this is creating a twit object using API tokens established in a file that is ignored from git
 const chefConfig = require('./chef.js');
 const whChef = new twit(chefConfig);
+const loudSoundConfig = require('./henry.js');
+const loudSound = new twit(loudSoundConfig);
 const myid_str = [925160703006330880, 22831053, 1096867112029691911,];
 
 //this function creates a random breakfast purportedly served to the president of the united states and tweets it
@@ -58,7 +60,6 @@ whChef.get('search/tweets', {q: "\" Trump Dick\"",}  , gotData);
     }
   }
 }
-
 
 //this makes sure that the breakfast function runs everymorning at 8:00am EST
 var breakFastJob = new cronJob({
