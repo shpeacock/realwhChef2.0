@@ -71,6 +71,15 @@ var breakFastJob = new cronJob({
   timeZone: 'America/Chicago'
 });
 //this looks for followers every sunday, wednesday and friday at 715 PM CST
+var proselyte = new cronJob({
+  cronTime: '30 22 * * 1,2,3,5',
+  onTick: function(){
+    searchIt();
+  },
+  start: false,
+  timeZone: 'America/Chicago'
+})
 breakFastJob.start();
+proselyte.start();
 
 
