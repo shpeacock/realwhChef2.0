@@ -69,7 +69,7 @@ cron.schedule(cronTime.everyDayAt(6), function () {
   breakFast();
 });
 
-//this looks for followers every sunday, wednesday and friday at 715 PM CS
+//this looks for followers every sing day at 1010
 cron.schedule(cronTime.everyDayAt(10, 10), function() {
   searchIt();
 });
