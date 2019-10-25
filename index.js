@@ -1,7 +1,6 @@
 //these are our npm dependencies
 const twit = require('twit');
 const animals = require('animals');
-const cronJob = require('cron').CronJob;
 //these are depdedencies established in other files
 const m = require('./data/meals.js');
 const bf = m.breakfast;
